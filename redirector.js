@@ -13,7 +13,7 @@ if (urlParams.has('map_id')) {
 
     if(!direct || direct.closed || typeof direct.closed == 'undefined') 
     { 
-        text.innerHTML = "Please allow pop-ups for automatic directing to work faster! (using old method)";
+        text.innerHTML = "Please allow pop-ups for automatic main window closing to work! (using old method)";
         window.location.replace(url);
     } 
     else 
