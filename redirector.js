@@ -6,11 +6,11 @@ const delay = (ms) => {
   };
 
 if (urlParams.has('map_id')) {
-    window.location.replace("osu://b/" + urlParams.get('map_id'));
+    window.open("osu://b/" + urlParams.get('map_id'), "_blank");
 
     delay(1000);
     
-    if (window.localStorage.getItem("autoclose")) {
+    if (window.localStorage.getItem("autoclose") === true) {
         window.close();
     } else {
         const autoclose = confirm('Allow Automatic Closing? (only allow if set application open to always allow)');
