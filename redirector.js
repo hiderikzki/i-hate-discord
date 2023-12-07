@@ -1,4 +1,4 @@
-const urlParams = new URLSearchParams(queryString);
+const urlParams = new URLSearchParams(window.location.search);
 
 const createElement = () => {
     let element = document.createElement("h6");
