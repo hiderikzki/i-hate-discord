@@ -7,14 +7,15 @@ const delay = (ms) => {
 
 if (urlParams.has('map_id')) {
     window.location.replace("osu://b/" + urlParams.get('map_id'));
-    
+
     delay(1000);
     
     if (window.localStorage.getItem("autoclose")) {
         window.close();
     } else {
+        const autoclose = confirm('Allow Automatic Closing? (only allow if set application open to always allow)');
+
         if (autoclose) {
-            autoclose = confirm('Allow Automatic Closing? (only allow if set application open to always allow)');
             window.localStorage.setItem("autoclose", true);
         }
     }
