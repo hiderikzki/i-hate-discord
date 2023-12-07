@@ -9,12 +9,17 @@ const delay = (ms) => {
 
 if (urlParams.has('map_id')) {
     const url = "osu://b/" + urlParams.get('map_id');
-    const open_page = confirm('Open The Url? (' + url + ')');
+    const direct = window.open(url, "_blank");;
 
-    if (open_page) {
-        window.open(url, "_blank");
+    if(!direct || direct.closed || typeof direct.closed == 'undefined') 
+    { 
+        text.innerHTML = "Please allow pop-ups for automatic directing to work faster! (using old method)";
+        window.location.replace(url);
+    } 
+    else 
+    {
         window.close();
     }
 } else {
-    text.innerHTML = "provide map_id as url parameter, k thanks try again!!!";
+    text.innerHTML = "Provide map_id as url parameter, k thanks try again!!!";
 }
