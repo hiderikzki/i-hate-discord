@@ -9,5 +9,5 @@ const createElement = () => {
 if (urlParams.has('map_id')) {
     window.location.replace("osu://b/" + urlParams.get('map_id'));
 } else {
-    document.appendChild(createElement())
+    document.body.appendChild(createElement())
 }
